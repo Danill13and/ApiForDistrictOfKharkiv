@@ -1,8 +1,8 @@
 const { DataTypes, Sequelize } = require('sequelize')
+const DataBaseUrl = process.env.DataBaseUrl
 
-const sequelize = new Sequelize('questions', 'postgres', 'postgres', {
-  host: 'localhost',
-  dialect: 'postgres',
+const sequelize = new Sequelize(DataBaseUrl, {
+  dialect: 'postgres'
 })
 
 const Question = sequelize.define('Question', {
